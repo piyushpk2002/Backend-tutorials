@@ -1,3 +1,6 @@
+// error is a default class provided by nodejs to handle errors, here we've extended that default class
+// to add additonal info
+
 class ApiError extends error{
     constructor(
         statusCode,
