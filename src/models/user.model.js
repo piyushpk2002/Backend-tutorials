@@ -59,7 +59,7 @@ const userSchema = new Schema(
 //when we want to modify data just before it's going to be sent
 
 userSchema.pre("save", async function (next) {
-
+    //check if password is modified or not (cause we only encrypt password when the password is changed)
     if(!this.isModified("password")) return next();
 
     this.password = await bcrypt.hash(this.password, 10)
