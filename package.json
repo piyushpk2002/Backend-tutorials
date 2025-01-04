@@ -1,33 +1,21 @@
 {
-  "name": "backend",
-  "version": "1.0.0",
-  "description": "first backend project",
-  "type": "module",
-  "main": "index.js",
-  "scripts": {
-    "dev": "nodemon -r dotenv/config --experimental-json-modules src/index.js"
-  },
-  "keywords": [
-    "javascript",
-    "chai",
-    "backend"
-  ],
-  "author": "Piyushpk",
-  "license": "ISC",
-  "devDependencies": {
-    "nodemon": "^3.1.7",
-    "prettier": "^3.3.3"
-  },
-  "dependencies": {
-    "bcrypt": "^5.1.1",
-    "cloudinary": "^2.5.1",
-    "cookie-parser": "^1.4.7",
-    "cors": "^2.8.5",
-    "dotenv": "^16.4.5",
-    "express": "^4.21.1",
-    "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.8.3",
-    "mongoose-aggregate-paginate-v2": "^1.1.2",
-    "multer": "^1.4.5-lts.1"
-  }
+	"type": "module",
+	"packageManager": "pnpm@9.9.0",
+	"scripts": {
+		"prepare": "node .husky/run.js",
+		"setup": "rokit install && pnpm install -w && pnpm run analyze:setup",
+		"format": "stylua . && pnpm exec biome format . --write",
+		"lint": "pnpm exec cspell . --quiet --dot --unique --gitignore && pnpm exec biome lint . --no-errors-on-unmatched && stylua -c . --respect-ignores && pnpm run analyze && pnpm run analyze:cleanup",
+		"analyze": "pnpm run analyze:setup && llsp analyze --defs=roblox.d.luau --no-strict-dm-types packages",
+		"analyze:cleanup": "pnpm exec shx test -f roblox.d.luau && pnpm exec shx rm -rf roblox.d.luau",
+		"analyze:setup": "pnpm exec shx test -f roblox.d.luau || curl -o roblox.d.luau https://raw.githubusercontent.com/JohnnyMorganz/luau-lsp/main/scripts/globalTypes.d.luau"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.8.3",
+		"@isentinel/dict-rbxts": "1.0.1",
+		"@isentinel/dict-roblox": "1.0.3",
+		"cspell": "8.14.2",
+		"husky": "9.1.5",
+		"shx": "0.3.4"
+	}
 }

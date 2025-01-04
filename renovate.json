@@ -1,0 +1,16 @@
+{
+	"extends": [
+		"config:recommended",
+		":pinAllExceptPeerDependencies",
+		"github>kineticwallet/renovate-configs:rokit",
+		"github>kineticwallet/renovate-configs:roblox-ts",
+		"npm:unpublishSafe"
+	],
+	"packageRules": [
+		{
+			"matchPackageNames": ["@rbxts/types"],
+			"automerge": true,
+			"minimumReleaseAge": "0 days"
+		}
+	]
+}

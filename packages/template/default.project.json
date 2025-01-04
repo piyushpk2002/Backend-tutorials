@@ -1,0 +1,6 @@
+{
+	"name": "@rbxts/template",
+	"tree": {
+		"$path": "dist"
+	}
+}

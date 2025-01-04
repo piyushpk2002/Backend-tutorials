@@ -1,0 +1,33 @@
+{
+	"$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+	"files": {
+		"maxSize": 5242880,
+		"ignore": ["*.lua", "*.luau"],
+		"ignoreUnknown": true
+	},
+	"linter": {
+		"rules": {
+			"recommended": true
+		}
+	},
+	"formatter": {
+		"formatWithErrors": true,
+		"indentWidth": 4,
+		"lineEnding": "crlf",
+		"lineWidth": 120
+	},
+	"javascript": {
+		"parser": {
+			"unsafeParameterDecoratorsEnabled": true
+		},
+		"formatter": {
+			"bracketSameLine": true
+		}
+	},
+	"json": {
+		"parser": {
+			"allowComments": true,
+			"allowTrailingCommas": false
+		}
+	}
+}
