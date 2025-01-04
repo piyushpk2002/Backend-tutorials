@@ -68,7 +68,11 @@ userSchema.pre("save", async function (next) {
 
 //custom methods
 userSchema.methods.isPasswordCorrect = async function(password){
-
+    //console.log(password," ", this.password);
+    
+    if(!password){
+         throw new Error("password Not Provided");  
+    }
     return await bcrypt.compare(password, this.password)
 }
 
@@ -83,7 +87,7 @@ userSchema.methods.generateAccessToken = function(){
         },
         process.env.ACCESS_TOKEN_SECRET,
         {
-            expiresIN: process.env.ACCESS_TOKEN_EXPIRY
+            expiresIn: process.env.ACCESS_TOKEN_EXPIRY
         }
     )
 }
