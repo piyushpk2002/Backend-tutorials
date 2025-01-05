@@ -1,21 +1,33 @@
 {
+	"name": "chai-backend",
+	"version": "1.0.0",
+	"description": "a backend at chai aur code channel - youtube",
 	"type": "module",
-	"packageManager": "pnpm@9.9.0",
+	"main": "index.js",
 	"scripts": {
-		"prepare": "node .husky/run.js",
-		"setup": "rokit install && pnpm install -w && pnpm run analyze:setup",
-		"format": "stylua . && pnpm exec biome format . --write",
-		"lint": "pnpm exec cspell . --quiet --dot --unique --gitignore && pnpm exec biome lint . --no-errors-on-unmatched && stylua -c . --respect-ignores && pnpm run analyze && pnpm run analyze:cleanup",
-		"analyze": "pnpm run analyze:setup && llsp analyze --defs=roblox.d.luau --no-strict-dm-types packages",
-		"analyze:cleanup": "pnpm exec shx test -f roblox.d.luau && pnpm exec shx rm -rf roblox.d.luau",
-		"analyze:setup": "pnpm exec shx test -f roblox.d.luau || curl -o roblox.d.luau https://raw.githubusercontent.com/JohnnyMorganz/luau-lsp/main/scripts/globalTypes.d.luau"
+	  "dev": "nodemon -r dotenv/config --experimental-json-modules src/index.js"
 	},
+	"keywords": [
+	  "javascript",
+	  "backend",
+	  "chai"
+	],
+	"author": "Hitesh Choudhary",
+	"license": "ISC",
 	"devDependencies": {
-		"@biomejs/biome": "1.8.3",
-		"@isentinel/dict-rbxts": "1.0.1",
-		"@isentinel/dict-roblox": "1.0.3",
-		"cspell": "8.14.2",
-		"husky": "9.1.5",
-		"shx": "0.3.4"
+	  "nodemon": "^3.0.1",
+	  "prettier": "^3.0.3"
+	},
+	"dependencies": {
+	  "bcrypt": "^5.1.1",
+	  "cloudinary": "^1.41.0",
+	  "cookie-parser": "^1.4.6",
+	  "cors": "^2.8.5",
+	  "dotenv": "^16.3.1",
+	  "express": "^4.18.2",
+	  "jsonwebtoken": "^9.0.2",
+	  "mongoose": "^8.0.0",
+	  "mongoose-aggregate-paginate-v2": "^1.0.6",
+	  "multer": "^1.4.5-lts.1"
 	}
-}
+  }
