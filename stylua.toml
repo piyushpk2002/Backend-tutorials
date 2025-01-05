@@ -1,0 +1,4 @@
+line_endings = "Windows"
+
+[sort_requires]
+enabled = true

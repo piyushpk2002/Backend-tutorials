@@ -1,0 +1,30 @@
+{
+	"$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
+	"import": [
+		"./node_modules/@isentinel/dict-rbxts/cspell-ext.json",
+		"./node_modules/@isentinel/dict-roblox/cspell-ext.json"
+	],
+	"ignorePaths": ["pnpm-lock.yaml", ".git/**", ".vscode/**"],
+	"dictionaries": ["bash", "filetypes", "lua", "misc", "node", "npm", "softwareTerms", "typescript"],
+	"language": "en",
+	"words": [
+		"automerge",
+		"biomejs",
+		"documentservice",
+		"isentinel",
+		"johnnymorganz",
+		"kineticwallet",
+		"lemonsignal",
+		"llsp",
+		"mathieudutour",
+		"npmjs",
+		"rbxts",
+		"rbxtsc",
+		"rojo",
+		"rokit",
+		"stylua",
+		"unpublish",
+		"softprops",
+		"Millis"
+	]
+}
